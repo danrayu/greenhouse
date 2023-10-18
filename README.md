@@ -35,6 +35,12 @@ greenhouse/
   gen_readings.sh
 ```
 
+## Application flow
+
+1. Sensors generate readings (`/sensor_system/sensor.py`) and make a `POST` request to the backend, a Flask API (`/backend/app.py`). Alternatively sensor readings can be generated from the root dir with `./gen_readings.sh`.
+2. The Flask API recieves the post request from the sensors, and saves it to `/backend/sensor_readings.csv`. When it recieves a `GET` request to the `/api/pointclim` endpoint, it retrieves the last 96 readings (if there are that many) and retreives them to the requesting address. 
+3. The React frontend makes requests to the backend API for data and waits until it gets any. When it does get some, it displays it on the root page at `http://localhost:3000/`. If there is less than 47 readings per sensor, it will not display it in the main dashboards, as those require 24 hours worth of data. (It assumes there is one readings every 30 minutes.)
+
 ## Project installatin
 
 ### Sensors / Arduino

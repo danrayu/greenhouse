@@ -57,6 +57,15 @@ const App = () => {
     }
   }, [readings]);
 
+  const displayDashboard = (sensorReadings) => {
+    return (
+      <Dashboard
+                    data={sensorReadings.data}
+                    sensorName={sensorReadings.sensor_id}
+                  />
+    );
+  }
+
   const displayApp = () => {
     return (
       <div>
@@ -75,10 +84,12 @@ const App = () => {
             {splitBySensorId(readings).map((sensorReadings, i) => {
               return (
                 <Card key={i} className="h-80 w-100">
-                  <Dashboard
-                    data={sensorReadings.data}
-                    sensorName={sensorReadings.sensor_id}
-                  />
+                  {(sensorReadings.data.length >= 47) && displayDashboard(sensorReadings)}
+                  {!(sensorReadings.data.length >= 47) && (() => {
+                    return (
+                      <h4 className="text-center">Not enough data (less than 24 hours).</h4>
+                    );
+                  })()}
                 </Card>
               );
             })}
