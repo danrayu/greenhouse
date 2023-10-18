@@ -53,6 +53,8 @@ To setup your arduino, first install Arduino IDE. In the IDE, install the librar
 
 With this you only have to change the sensor name variable at the file beginning of `sensor.py`. A new file for each sensor is expected. The file is to be run with python. With this `POST` requests with sensor readings will be sent to the backend.
 
+<b>Alternatively</b>, if one does not have the sensor setup, `gen_readings.sh` can be run to generate sample data for the app to use.
+
 ### Frontend / React
 
 The installation process is simple: <br>
@@ -75,6 +77,8 @@ They will not be included in the production build so you can use them for things
 ### Backend / Flask
 
 The backend uses very few modules, so the installation is limited. Assuming a recent version of python is installed, first you have to install flask: `pip install flask`. After it is installed using the command `flask run` in the `backend` dir will start up the backend.
+
+For the command to work, the flask app has to be named `app.py`.
 
 ## Available Scripts
 

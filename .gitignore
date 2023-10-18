@@ -18,3 +18,4 @@
 
 /backend/venv
 /backend/__pycache__
+/backend/sensor_readings.csv
