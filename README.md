@@ -1,11 +1,5 @@
 This project's repo is [greenhouse](https://github.com/danrayu/greenhouse).
 
-## Table of Contents
-
-- [Updating to New Releases](#updating-to-new-releases)
-- [Sending Feedback](#sending-feedback)
-- [Folder Structure](#folder-structure)
-
 ## Folder Structure
 
 Your project should look like this:
@@ -101,4 +95,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Generates slighly randomised readings of 2 sensors for two days.
 
 The file is generated in ./backend/
+
+## Sample data
+
+The `gen_read<sensor_name>.py` files generate files for imaginary sensors `a1` and `a2`. The backend and frontend will work with any sensor names, but the data structure created by the `gen_read` files has to be maintained.
 
