@@ -1,7 +1,7 @@
 import csv
 
 # Read the CSV file
-with open('sensor_readings.csv', 'r') as file:
+with open('./backend/sensor_readings.csv', 'r') as file:
     reader = csv.reader(file)
     data = list(reader)
 
@@ -9,7 +9,7 @@ with open('sensor_readings.csv', 'r') as file:
 data.sort(key=lambda row: float(row[-1]), reverse=True)
 
 # Write the sorted data back to the CSV file
-with open('sensor_readings.csv', 'w', newline='') as file:
+with open('./backend/sensor_readings.csv', 'w', newline='') as file:
     writer = csv.writer(file)
     writer.writerows(data)
     

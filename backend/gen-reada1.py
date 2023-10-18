@@ -14,7 +14,7 @@ time_increment = 30 * 60 * 1000
 
 # Output file
 
-with open("sensor_readings.csv", "w", newline='') as file:
+with open("./backend/sensor_readings.csv", "w", newline='') as file:
     writer = csv.writer(file)
     for i in range(96):  # 96 readings for 2 days
         # Convert timestamp to hour to determine day/night
